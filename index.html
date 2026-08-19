@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>پۆرتالی وەرگرتن | زانکۆکانی عێراق</title>
+<title>پەڕاوگەی فەلاح گلی | پۆرتالی وەرگرتنی زانکۆکانی عێراق</title>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <style>
 @font-face {
@@ -11,15 +11,15 @@
   src: local('Vazirmatn');
 }
 :root{
-  --bg-deep:#0B4F3E;
-  --bg-deep-2:#0E3C30;
+  --bg-deep:#5C1F1B;
+  --bg-deep-2:#3A1210;
   --gold:#C9A24B;
-  --gold-light:#E3C878;
-  --cream:#F5F1E6;
-  --cream-2:#FBF9F3;
-  --ink:#1B2B24;
-  --muted:#5B6B62;
-  --line:#E4DCC4;
+  --gold-light:#E8C87A;
+  --cream:#F5EFE3;
+  --cream-2:#FBF7EF;
+  --ink:#2A1B15;
+  --muted:#7A5F55;
+  --line:#E9DCC9;
   --danger:#8A3B2B;
 }
 *{box-sizing:border-box}
@@ -155,6 +155,42 @@ input[type=number]:focus, select:focus{
 }
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 
+.field-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:6px;
+}
+.field-head .hint{
+  font-size:11px;
+  font-weight:400;
+  color:var(--muted);
+}
+.field-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:8px;
+  margin-top:8px;
+}
+.field-btn{
+  border:1px solid var(--line);
+  background:#fff;
+  border-bottom:3px solid var(--gold);
+  border-radius:12px;
+  padding:12px 6px;
+  font-size:13px;
+  font-weight:700;
+  cursor:pointer;
+  color:var(--ink);
+  text-align:center;
+}
+.field-btn.active{
+  background:var(--bg-deep);
+  color:var(--gold-light);
+  border-color:var(--bg-deep);
+  border-bottom:3px solid var(--gold);
+}
+
 .summary{
   background:var(--bg-deep);
   color:var(--cream-2);
@@ -232,11 +268,118 @@ footer{
   font-weight:800;
   margin-inline-start:6px;
 }
+.brand-bar{
+  background:
+    radial-gradient(circle at 15% 10%, rgba(201,162,75,0.14), transparent 45%),
+    linear-gradient(160deg, var(--bg-deep) 0%, var(--bg-deep-2) 100%);
+  color:var(--cream-2);
+  padding:16px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  border-bottom:1px solid rgba(227,200,120,0.25);
+}
+.brand-bar-inner{display:flex;align-items:center;gap:10px;max-width:640px;margin:0 auto;width:100%;justify-content:space-between}
+.brand-name{font-size:16px;font-weight:800;color:var(--gold-light)}
+.brand-sub{font-size:11px;color:#E4D4C6;margin-top:2px}
+.brand-badge{
+  width:44px;height:44px;border-radius:50%;
+  border:2px solid var(--gold);
+  background:var(--cream-2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;color:var(--bg-deep);font-weight:800;
+}
+.intro-card{
+  max-width:640px;margin:0 auto;padding:30px 20px 6px;
+  text-align:center;
+}
+.intro-pill{
+  display:inline-block;
+  font-size:12px;
+  color:var(--gold-light);
+  border:1px solid rgba(201,162,75,0.4);
+  border-radius:999px;
+  padding:5px 16px;
+  margin-bottom:10px;
+  background:rgba(255,255,255,0.05);
+}
+.intro-eyebrow{
+  font-size:13px;
+  color:var(--gold-light);
+  font-weight:700;
+  margin-bottom:4px;
+}
+.intro-title{
+  font-size:30px;
+  font-weight:900;
+  color:var(--gold-light);
+  margin:2px 0 10px;
+}
+.intro-tagline{
+  font-size:15px;
+  color:var(--cream-2);
+  font-weight:700;
+  margin-bottom:14px;
+}
+.intro-desc{
+  font-size:13.5px;
+  color:#E4D4C6;
+  line-height:1.9;
+  margin-bottom:20px;
+}
+.intro-buttons{display:flex;flex-direction:column;gap:10px;align-items:center;padding-bottom:26px}
+.btn-primary{
+  background:var(--gold-light);
+  color:var(--bg-deep-2);
+  font-weight:800;
+  border:none;
+  border-radius:12px;
+  padding:12px 22px;
+  font-size:14px;
+  width:100%;
+  max-width:320px;
+  cursor:pointer;
+}
+.btn-outline{
+  background:rgba(255,255,255,0.06);
+  color:var(--cream-2);
+  border:1px solid rgba(227,200,120,0.35);
+  border-radius:12px;
+  padding:11px 22px;
+  font-size:13.5px;
+  width:100%;
+  max-width:320px;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  text-decoration:none;
+}
 </style>
 </head>
 <body>
 
+<div class="brand-bar">
+  <div class="brand-bar-inner">
+    <div style="text-align:start">
+      <div class="brand-name">پەڕاوگەی فەلاح گلی</div>
+      <div class="brand-sub">ڕێنمایی وەرگرتنی زانکۆیی دڵنیاکراو</div>
+    </div>
+    <div class="brand-badge">ف گ</div>
+  </div>
+</div>
+
 <div class="hero">
+  <div class="intro-card">
+    <span class="intro-pill">📅 ساڵی خوێندن ٢٠٢٧-٢٠٢٦</span><br>
+    <span class="intro-pill">ڕێنمایی وەرگرتنی زانکۆیی دڵنیاکراو</span>
+    <div class="intro-eyebrow">ڕێنمایی ئەکادیمی بۆ خوێندکاری کورد</div>
+    <div class="intro-title">پەڕاوگەی فەلاح گلی</div>
+    <div class="intro-tagline">ڕێنماییەکەت بۆ وەرگرتنی زانکۆیی</div>
+    <p class="intro-desc">سەرچاوەیەکی ڕێنمایی و فەهرەستکراوە بۆ کەمترین کۆی وەرگرتن لە زانکۆ و کۆلێژە حکومی و ئەهلییەکان، ڕێکخراو بەپێی سەرچاوە و ساڵی خوێندن بۆ ئەوەی هەڵبژاردنەکانت بە ڕوونی ببینیت.</p>
+    <div class="intro-buttons">
+      <button class="btn-primary">دۆزینەوەی ڕێگاکانی وەرگرتن</button>
+      <a href="#" class="btn-outline">📢 کەناڵی پەڕاوگەی فەلاح گلی</a>
+    </div>
+  </div>
   <div class="hero-inner">
     <span class="eyebrow">وەرگرتنی زانکۆیی · ٢٠٢٦-٢٠٢٥</span>
     <h1>نمرەکەت بنووسە، کۆلێژە گونجاوەکان دەستبەجێ ببینە</h1>
@@ -283,6 +426,24 @@ footer{
           <option value="ذكر">نێر</option>
           <option value="انثى">مێ</option>
         </select>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="field-head">
+        <label style="margin-bottom:0">بواری خوێندن</label>
+        <span class="hint">🔧 فلتەری فەرمی</span>
+      </div>
+      <div class="field-grid" id="fieldRow">
+        <button class="field-btn" data-v="engineering">ئەندازیاری</button>
+        <button class="field-btn" data-v="medical">پزیشکی</button>
+        <button class="field-btn active" data-v="">هەموو</button>
+        <button class="field-btn" data-v="management">بەڕێوەبردن</button>
+        <button class="field-btn" data-v="science">زانست</button>
+        <button class="field-btn" data-v="education">پەروەردە</button>
+        <button class="field-btn" data-v="other">جیاواز</button>
+        <button class="field-btn" data-v="arts">هونەر</button>
+        <button class="field-btn" data-v="law">یاسا</button>
       </div>
     </div>
 
@@ -372,6 +533,30 @@ const branchAr = {'علمي':'زانستی','ادبي':'ئەدەبی','فنون'
 const genderAr = {'مختلط':'تێکەڵ','ذكر':'نێر','انثى':'مێ'};
 const channelAr = {'general':'گشتی','gifted':'بەهرەمەند'};
 
+// بواری خوێندن — بۆ فەهرەستکردنی کۆلێژەکان بەپێی ناوی کۆلێژ (بنەمای فلتەرکردن)
+const fieldAr = {
+  'medical':'پزیشکی','engineering':'ئەندازیاری','management':'بەڕێوەبردن',
+  'science':'زانست','education':'پەروەردە','law':'یاسا','arts':'هونەر','other':'جیاواز'
+};
+const ALEF_RE = /[اأإآ]/g;
+const stripAlef = s => s.replace(ALEF_RE, '');
+const FIELD_KEYWORDS = [
+  ['medical', ['طب','صيدل','تمريض','التوليد','صحي']],
+  ['engineering', ['هندس','نفط والغاز']],
+  ['law', ['قانون','حقوق']],
+  ['management', ['ادار','اقتصاد','محاسب','سياح','مصرفي']],
+  ['education', ['تربي','رياض الطفال']],
+  ['arts', ['فنون','موسيق']],
+  ['science', ['علوم','حاسوب','حاسبات','رياضيات','فيزياء','كيمياء','بيئة','جيولوجيا']]
+].map(([key, kws]) => [key, kws.map(stripAlef)]);
+function fieldOf(d){
+  const n = stripAlef(d.college || '');
+  for(const [key, kws] of FIELD_KEYWORDS){
+    if(kws.some(k => n.includes(k))) return key;
+  }
+  return 'other';
+}
+
 const govAr = {
   'بغداد':'بەغدا','نينوى':'نەینەوا','البصرة':'بەسرە','كركوك':'کەرکووک',
   'النجف':'نەجەف','كربالء':'کەربەلا','بابل':'بابل','ذي قار':'زیقار',
@@ -420,7 +605,7 @@ function governorateOf(d){
   }
   return TECH_DEFAULT_GOV[d.university] || null;
 }
-DATA.forEach(d => { d.governorate = governorateOf(d); });
+DATA.forEach(d => { d.governorate = governorateOf(d); d.field = fieldOf(d); });
 
 document.getElementById('stTotal').textContent = DATA.length.toLocaleString('en-US');
 document.getElementById('stUni').textContent = new Set(DATA.map(d=>d.university)).size.toLocaleString('en-US');
@@ -437,6 +622,17 @@ const quickAvg = document.getElementById('quickAvg');
 const provRow = document.getElementById('provRow');
 const provAllBtn = provRow.querySelector('button[data-v=""]');
 const selectedGovs = new Set();
+const fieldRow = document.getElementById('fieldRow');
+const fieldAllBtn = fieldRow.querySelector('button[data-v=""]');
+let selectedField = '';
+
+fieldRow.addEventListener('click', (e)=>{
+  if(e.target.tagName !== 'BUTTON') return;
+  selectedField = e.target.dataset.v;
+  [...fieldRow.children].forEach(b=>b.classList.remove('active'));
+  e.target.classList.add('active');
+  render();
+});
 
 quickAvg.addEventListener('click', (e)=>{
   if(e.target.tagName !== 'BUTTON') return;
@@ -482,6 +678,7 @@ function render(){
   if(gender) filtered = filtered.filter(d => d.gender === gender || d.gender === 'مختلط');
   if(channel) filtered = filtered.filter(d => d.channel === channel);
   if(selectedGovs.size > 0) filtered = filtered.filter(d => selectedGovs.has(d.governorate));
+  if(selectedField) filtered = filtered.filter(d => d.field === selectedField);
   if(q) filtered = filtered.filter(d => d.full_name.includes(q));
 
   filtered = filtered.slice().sort((a,b)=> b.avg - a.avg);
@@ -508,6 +705,7 @@ function render(){
           <span class="tag">${branchAr[d.branch]||d.branch}</span>
           <span class="tag">${genderAr[d.gender]||d.gender}</span>
           <span class="tag">📍 ${govAr[d.governorate]||d.governorate||'-'}</span>
+          <span class="tag">🔧 ${fieldAr[d.field]||'جیاواز'}</span>
         </div>
       </div>
       <div class="avgbox">
