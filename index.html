@@ -460,6 +460,27 @@ footer{
   0%{background-position:200% 0}
   100%{background-position:-200% 0}
 }
+.martyrs-box{
+  display:none;
+  margin-top:14px;
+  padding:16px;
+  border-radius:14px;
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--gold);
+  font-size:13.5px;
+  line-height:2;
+}
+.martyrs-box.show{display:block}
+.martyrs-box h3{margin:0 0 10px;font-size:15px;color:var(--gold)}
+.martyrs-box b{display:block;margin-top:10px}
+.martyrs-box ul{margin:6px 0;padding-inline-start:18px}
+.martyrs-box a{
+  display:inline-block;
+  margin-top:12px;
+  color:var(--gold);
+  font-weight:700;
+  text-decoration:none;
+}
 .badge-channel{
   display:inline-block;
   font-size:10px;
@@ -654,6 +675,53 @@ footer{
     </div>
 
     <div class="field">
+      <label>جۆری قبوڵکردن</label>
+      <select id="channelSel">
+        <option value="">هەردوو جۆرەکان</option>
+        <option value="general">قبوڵی ناوەندی گشتی</option>
+        <option value="gifted">بەهرەمەندان (دەرچووانی قوتابخانەی بەهرەمەندان)</option>
+        <option value="martyrs">کەسوکاری شەهید</option>
+      </select>
+    </div>
+
+    <div class="martyrs-box" id="martyrsBox">
+      <h3>🕊 ڕێساکانی پێشکەشکردنی کەسوکاری شەهید</h3>
+      <p>وەزارەتی خوێندنی باڵا و توێژینەوەی زانستی ڕێساکانی پێشکەشکردنی کەسوکاری شەهیدی ڕاگەیاند بەم شێوەیە:</p>
+
+      <b>١- ئەو کۆمەڵانەی ئەم ڕێسایانە دەیانگرێتەوە:</b>
+      <ul>
+        <li>أ- کەسوکاری شەهید و قوربانیانی تاوانەکانی حیزبی بەعسی ڕووخاو.</li>
+        <li>ب- کەسوکاری شەهیدی قوربانیانی هەڵەی سەربازی و کردەوە تیرۆریستییەکان و بریندارەکان.</li>
+        <li>ج- کەسوکاری شەهیدی حەشدی شەعبی.</li>
+        <li>د- کەسوکاری شەهیدی ناوبراو لە وەزارەتی شەهیدان و ئەنفالکراوان لە هەرێمی کوردستان.</li>
+      </ul>
+
+      <b>٢- ڕێژەی قبوڵکردن</b> بەپێی بڕگەی (٢)ی سەرەوە <b>(١٠٪)</b>ە بۆ هەر کۆمەڵێک.
+
+      <b>٣- قوتابیان کێبڕکێ دەکەن بۆ قبوڵبوون لە:</b>
+      <ul>
+        <li>أ- کۆلێژەکانی گرووپی پزیشکی بە جیاوازی <b>(٥) نمرە</b> یان کەمتر لە کەمترین ئاستی قبوڵکردن لە قبوڵی ناوەندی بۆ ساڵی خوێندنی (٢٠٢٥/٢٠٢٦)، بەمەرجێک نمرەی قوتابی لە <b>(٩٠٪)</b> کەمتر نەبێت.</li>
+        <li>ب- کۆلێژ و پەیمانگاکانی تر بە جیاوازی <b>(٧) نمرە</b> یان کەمتر لە کەمترین ئاستی قبوڵی ناوەندی بۆ ساڵی (٢٠٢٥/٢٠٢٦).</li>
+      </ul>
+
+      <b>٤-</b> پەسەندکردنی کەناڵی کەسوکاری شەهید بە ڕێژەی (١٠٪) بۆ قبوڵکردنی قوتابیان لە هەموو کۆلێژ و پەیمانگاکان (جگە لە گرووپی پزیشکی) لە دەرچووانی ئامادەیی و لقە پیشەییەکان و ئامادەییەکانی پەرستاری.
+
+      <b>٥-</b> مافی قوتابیانی کەسوکاری شەهیدە پێشکەشکردن بکەن بۆ هەردوو کەناڵی قبوڵی ناوەندی و کەسوکاری شەهید، بەپێی ڕێساکانی تایبەت بە هەر پسپۆڕییەک.
+
+      <b>٦-</b> دابەشکردنی ئەو قوتابیانەی لە کەناڵی کەسوکاری شەهیددان بۆ سەر کۆلێژ و پەیمانگاکان بەپێی ئەو ڕێژەیە دەبێت کە لە بڕگەی (٢)ی سەرەوە دیاریکراوە.
+
+      <b>٧-</b> پێشکەشکردن لە ڕێگەی دەروازەی ئەلیکترۆنی بەڕێوەبەرایەتی خوێندن و پلاندانان و بەدواداچوونەوە دەبێت، و پێشکەشکردنی ئەلیکترۆنی قوتابیان پەسەند دەکرێت دوای پشتڕاستکردنەوەی دامەزراوەی شەهیدان کە قوتابی لەوانەیە یاساکە دەیگرێتەوە.
+
+      <b>٨-</b> قوتابی پابەندە دوای تەواوکردنی پێشکەشکردنی ئەلیکترۆنی سەردانی دامەزراوەی شەهیدان بکات بۆ تەواوکردنی ڕێکارەکانی پشتڕاستکردنەوە، بەپێچەوانەوە قبوڵبوونەکەی دەگوازرێتەوە بۆ کەناڵی گشتی (قبوڵی ناوەندی).
+
+      <b>٩-</b> قوتابی بە نامەی پشتگیری لە بەڕێوەبەرایەتییەکانی دامەزراوەی شەهیدان/ لقی چاودێری زانستی ئاگادار دەکرێتەوە، و لە فایلی قوتابیدا هەڵدەگیرێت و کۆپییەکی بۆ وەزارەت دەنێردرێت.
+
+      <b>١٠-</b> قبوڵکردنی قوتابیانی کەسوکاری شەهید بەپێی ئەو کەناڵانەیە کە لە بڕگەی (٢) باسکراون، بەڵام ئەو کۆلێژانەی قبوڵی ڕاستەوخۆ پەسەند ناکەن ڕێنماییە کارپێکراوەکان جێبەجێ دەکەن.
+
+      <a href="https://t.me/martyrsfoundation/11645" target="_blank" rel="noopener">📎 ڕێبەر و وردەکارییەکانی تر — کەناڵی فەرمی دامەزراوەی شەهیدان</a>
+    </div>
+
+    <div class="field">
       <div class="field-head">
         <label style="margin-bottom:0">بواری خوێندن</label>
         <span class="hint">🔧 فلتەری فەرمی</span>
@@ -693,14 +761,6 @@ footer{
       </div>
     </div>
 
-    <div class="field" style="margin-bottom:0">
-      <label>جۆری قبوڵکردن</label>
-      <select id="channelSel">
-        <option value="">هەردوو جۆرەکان</option>
-        <option value="general">قبوڵی ناوەندی گشتی</option>
-        <option value="gifted">بەهرەمەندان (دەرچووانی قوتابخانەی بەهرەمەندان)</option>
-      </select>
-    </div>
   </div>
 
   <div class="card">
@@ -839,7 +899,7 @@ const EMBEDDED_DATA = [{"full_name":"جامعة بغداد/كلية الطب","u
 
 const branchAr = {'علمي':'زانستی','ادبي':'ئەدەبی','فنون':'هونەری'};
 const genderAr = {'مختلط':'تێکەڵ','ذكر':'نێر','انثى':'مێ'};
-const channelAr = {'general':'گشتی','gifted':'بەهرەمەند'};
+const channelAr = {'general':'گشتی','gifted':'بەهرەمەند','martyrs':'کەسوکاری شەهید'};
 
 // بواری خوێندن — بۆ فەهرەستکردنی کۆلێژەکان بەپێی ناوی کۆلێژ (بنەمای فلتەرکردن)
 const fieldAr = {
@@ -919,6 +979,7 @@ const avgInput = document.getElementById('avgInput');
 const branchSel = document.getElementById('branchSel');
 const genderSel = document.getElementById('genderSel');
 const channelSel = document.getElementById('channelSel');
+const martyrsBox = document.getElementById('martyrsBox');
 const searchInput = document.getElementById('searchInput');
 const resultsEl = document.getElementById('results');
 const pdfBtn = document.getElementById('pdfBtn');
@@ -986,7 +1047,26 @@ function render(){
   }
   if(branch) filtered = filtered.filter(d => d.branch === branch);
   if(gender) filtered = filtered.filter(d => d.gender === gender || d.gender === 'مختلط');
-  if(channel) filtered = filtered.filter(d => d.channel === channel);
+  martyrsBox.classList.toggle('show', channel === 'martyrs');
+
+  if(channel === 'martyrs'){
+    // کەناڵی کەسوکاری شەهید: پزیشکی ٥ نمرە (بەمەرجی ٩٠٪+)، ئەوانی تر ٧ نمرە
+    filtered = DATA.filter(d => d.channel === 'general');
+    if(branch) filtered = filtered.filter(d => d.branch === branch);
+    if(gender) filtered = filtered.filter(d => d.gender === gender || d.gender === 'مختلط');
+    if(!isNaN(avg)){
+      filtered = filtered.filter(d => d.field === 'medical'
+        ? (avg >= 90 && d.avg <= avg + 5)
+        : (d.avg <= avg + 7));
+    }
+    // دەستکاریکردنی نمرەی پیشاندراو بەپێی ڕێساکان
+    filtered = filtered.map(d => {
+      const cut = d.field === 'medical' ? 5 : 7;
+      return {...d, origAvg: d.avg, avg: Math.max(0, d.avg - cut), channel: 'martyrs'};
+    });
+  } else if(channel){
+    filtered = filtered.filter(d => d.channel === channel);
+  }
   if(selectedGovs.size > 0) filtered = filtered.filter(d => selectedGovs.has(d.governorate));
   if(selectedField) filtered = filtered.filter(d => d.field === selectedField);
   if(q) { const nq = stripAlef(q); filtered = filtered.filter(d => d._search.includes(nq)); }
@@ -1025,7 +1105,7 @@ function render(){
       </div>
       <div class="avgbox">
         <b>${d.avg.toFixed(2)}</b>
-        <span>کەمترین نمرە</span>
+        <span>${d.origAvg!==undefined ? `پێشتر ${d.origAvg.toFixed(2)}` : 'کەمترین نمرە'}</span>
       </div>
     </div>
   `).join('');
